@@ -1,0 +1,47 @@
+int sampling_equivalent_0_pred_raw_2_1_stateless_alu_0_0(int input0, int opcode_hole_local, int immediate_operand_hole_local, int mux1_ctrl_hole_local, int mux2_ctrl_hole_local) {
+  int opcode = opcode_hole_local;
+  int immediate_operand = immediate_operand_hole_local;
+
+  int x = sampling_equivalent_0_pred_raw_2_1_stateless_alu_0_0_mux1(input0, mux1_ctrl_hole_local);
+  int y = sampling_equivalent_0_pred_raw_2_1_stateless_alu_0_0_mux2(input0, mux2_ctrl_hole_local);
+
+  if (opcode == 0) {
+      return immediate_operand;
+    } else if (opcode == 1) {
+      return x + y;
+    } else if (opcode == 2) {
+      return x + immediate_operand;
+    } else if (opcode == 3) {
+      return x - y;
+    } else if (opcode == 4) {
+      return x - immediate_operand;
+    } else if (opcode == 5) {
+      return immediate_operand - x;
+    } else if (opcode == 6) {
+      return (x != 0) || (y != 0);
+    } else if (opcode == 7) {
+      return (x != 0) || (immediate_operand != 0);
+    } else if (opcode == 8) {
+      return (x != 0) && (y != 0);
+    } else if (opcode == 9) {
+      return (x != 0) && (immediate_operand != 0);
+    } else if (opcode == 10) {
+      return ! (x != 0);
+    } else if (opcode == 11) {
+      return x != y;
+    } else if (opcode == 12) {
+      return x != immediate_operand;
+    } else if (opcode == 13) {
+      return x == y;
+    } else if (opcode == 14) {
+      return x == immediate_operand;
+    } else if (opcode == 15) {
+      return x >= y;
+    } else if (opcode == 16) {
+      return x >= immediate_operand;
+    } else if (opcode == 17) {
+      return x < y;
+    } else {
+      return x < immediate_operand;
+    }
+}  
