@@ -10,7 +10,7 @@ def main(argv):
     # Read file into string
     f = open(file_name,"r")
     file_string = f.read()
-    search_result = re.findall('int' +' (\w+) ' + '= (\d)', file_string)
+    search_result = re.findall('int' +' (\w+) ' + '= (\d+)', file_string)
     print(len(search_result))
     # search result will store the hole_name and hole_value
     for i in range(len(search_result)):
