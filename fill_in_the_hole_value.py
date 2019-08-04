@@ -20,13 +20,13 @@ def main(argv):
         # pos is the pos of the hole_
         pos = file_string.find(search_result[i][0])
         while (pos != -1):
+            # do not do replace in hole_ assignment part
             pos = file_string.find(search_result[i][0],pos + 1)
-            if (file_string[pos + len(search_result[i][0])] != '_'):
+            if (file_string[pos + len(search_result[i][0])] != '_' and pos != -1):
                 # Because we cannot do assignment directly to string
                 list_file_string = list(file_string)
                 list_file_string[pos : pos + len(search_result[i][0])] = search_result[i][1]
                 file_string = ''.join(list_file_string)
-    
     file = open("/tmp/test.sk", "w")
     file.write(file_string)
     file.close()
